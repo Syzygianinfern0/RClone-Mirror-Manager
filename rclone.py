@@ -23,9 +23,8 @@ class RClone:
         self.log.debug("Invoking : %s", " ".join(command_with_args))
         try:
             with subprocess.Popen(
-                    command_with_args,
-                    stdout=subprocess.PIPE,
-                    stderr=subprocess.PIPE) as proc:
+                command_with_args, stdout=subprocess.PIPE, stderr=subprocess.PIPE
+            ) as proc:
                 (out, err) = proc.communicate()
 
                 # out = proc.stdout.read()
@@ -35,23 +34,13 @@ class RClone:
                 if err:
                     self.log.warning(err.decode("utf-8").replace("\\n", "\n"))
 
-                return {
-                    "code": proc.returncode,
-                    "out": out,
-                    "error": err
-                }
+                return {"code": proc.returncode, "out": out, "error": err}
         except FileNotFoundError as not_found_e:
             self.log.error("Executable not found. %s", not_found_e)
-            return {
-                "code": -20,
-                "error": not_found_e
-            }
+            return {"code": -20, "error": not_found_e}
         except Exception as generic_e:
             self.log.exception("Error running command. Reason: %s", generic_e)
-            return {
-                "code": -30,
-                "error": generic_e
-            }
+            return {"code": -30, "error": generic_e}
 
     def run_cmd(self, command, extra_args=[]):
         """
@@ -61,7 +50,7 @@ class RClone:
             - extra_args (list): extra arguments to be passed to the rclone command
         """
         # save the configuration in a temporary file
-        with tempfile.NamedTemporaryFile(mode='wt', delete=True) as cfg_file:
+        with tempfile.NamedTemporaryFile(mode="wt", delete=True) as cfg_file:
             # cfg_file is automatically cleaned up by python
             # self.log.debug("rclone config: ~%s~", self.cfg)
             cfg_file.write(self.cfg)
