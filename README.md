@@ -4,6 +4,9 @@
 
 </div>
 
+# Description
+Put simply, it regularly triggers GitHub Actions to execute a script that pair-wise iterates and runs `rclone sync` over defined drives. 
+
 # Dependencies 🧰
 - rclone
 - python3
