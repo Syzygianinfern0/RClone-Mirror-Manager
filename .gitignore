@@ -1,5 +1,6 @@
 ### Config Files
 rclone.conf
+config.env
 
 ### IDE Specific
 .idea/

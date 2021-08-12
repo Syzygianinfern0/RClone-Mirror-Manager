@@ -21,6 +21,8 @@ for from_drive in from_drives:
         f"{to_drive}:sync/{from_drive}",
         ["--drive-server-side-across-configs", "-P"],
     )
+    if result["error"]:
+        exit(1)
 
 from_drive = to_drives[0]
 for to_drive in to_drives[1:]:
@@ -31,3 +33,5 @@ for to_drive in to_drives[1:]:
         f"{to_drive}:sync/",
         ["--drive-server-side-across-configs", "-P"],
     )
+    if result["error"]:
+        exit(1)
