@@ -4,11 +4,11 @@ import logging
 cfg_path = "./rclone.conf"
 from_drives = [
     "test",
-    "one",
-    "two",
-    "three",
-    "four",
-    "five",
+    "__meow",
+    "__quack",
+    "dumpyard",
+    "pss",
+    "public",
 ]
 to_drives = [
     "1",
