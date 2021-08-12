@@ -6,10 +6,16 @@ jobs:
     steps:
       - name: Install RClone
         run: |
-          - curl https://rclone.org/install.sh | sudo bash
+          curl https://rclone.org/install.sh | sudo bash
+          rclone
+      - name: Checkout repository code
+        uses: actions/checkout@v2
       - name: Downloading config file
         run: |
           wget ${{ secrets.CONF_URL }} -O rclone.config
-      - name: Start sync
+      - name: List files in the repository
         run: |
-          python3 sync.py
+          ls ${{ github.workspace }}
+#      - name: Start sync
+#        run: |
+#          python3 sync.py
