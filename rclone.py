@@ -11,9 +11,7 @@ class RClone:
     def _execute(self, command_with_args):
         self.log.debug("Invoking : %s", " ".join(command_with_args))
         try:
-            with subprocess.Popen(
-                    command_with_args, stdout=subprocess.PIPE, stderr=subprocess.PIPE
-            ) as proc:
+            with subprocess.Popen(command_with_args, stdout=subprocess.PIPE, stderr=subprocess.PIPE) as proc:
                 (out, err) = proc.communicate()
 
                 # out = proc.stdout.read()

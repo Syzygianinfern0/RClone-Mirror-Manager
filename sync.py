@@ -8,9 +8,7 @@ to_drives = ["1", "2", "3", "4", "5"]
 cfg = open(cfg_path).read()
 rc = rclone.with_config(cfg)
 
-logging.basicConfig(
-    level=logging.DEBUG, format="%(asctime)s %(name)s [%(levelname)s]: %(message)s"
-)
+logging.basicConfig(level=logging.DEBUG, format="%(asctime)s %(name)s [%(levelname)s]: %(message)s")
 
 to_drive = to_drives[0]
 for from_drive in from_drives:
