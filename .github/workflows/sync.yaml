@@ -7,7 +7,7 @@ jobs:
       - name: Install RClone
         run: |
           curl https://rclone.org/install.sh | sudo bash
-          rclone
+          rclone help
       - name: Checkout repository code
         uses: actions/checkout@v2
       - name: Downloading config file
