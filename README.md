@@ -1,7 +1,6 @@
 <div align="center">
 
-# 🪞 RClone Mirror Manager 🪞
-⬇ Backup your Beloved RClone Drives to Multiple Mirrors
+<img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&height=300&text=%20RClone%20Mirror%20Manager%20&fontAlignY=35&desc=Backup%20your%20Beloved%20RClone%20Drives%20to%20Multiple%20Mirrors&animation=fadeIn&fontColor=0c1017" alt="RClone Mirror Manager"/>
 
 </div>
 
@@ -18,6 +17,8 @@
 5. Edit the `from_drives` and `to_drives` in [`sync.py`](sync.py) as you wish.
 6. The script is set to run every day at 6:30 AM UTC. Feel free to modify that under [`.github/workflows/sync.yaml`](.github/workflows/sync.yaml).
 7. Profit 💯
+
+---
 
 Note: The [`sync.sh`](sync.sh) file is a bash equivalent of the [`sync.py`](sync.py). If you want to tinker with this project
 but you don't like/know Python3, feel free to start there. 
