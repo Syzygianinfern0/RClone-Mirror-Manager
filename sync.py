@@ -3,8 +3,8 @@ import logging
 
 cfg_path = "./rclone.conf"
 from_drives = [
-    "test",
-    "__meow",
+    # "test",
+    # "__meow",
     "__quack",
     "dumpyard",
     "pss",
@@ -32,7 +32,7 @@ for from_drive in from_drives:
         f"{to_drive}:sync/{from_drive}",
         ["--drive-server-side-across-configs"],
     )
-    if result["error"]:
+    if "error" in result["error"].decode("utf-8").lower():
         exit(1)
 
 from_drive = to_drives[0]
@@ -44,5 +44,5 @@ for to_drive in to_drives[1:]:
         f"{to_drive}:sync/",
         ["--drive-server-side-across-configs"],
     )
-    if result["error"]:
+    if "error" in result["error"].decode("utf-8").lower():
         exit(1)
