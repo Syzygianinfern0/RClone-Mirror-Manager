@@ -16,6 +16,6 @@ jobs:
       - name: List files in the repository
         run: |
           ls ${{ github.workspace }}
-#      - name: Start sync
-#        run: |
-#          python3 sync.py
+      - name: Start sync
+        run: |
+          python3 sync.py
