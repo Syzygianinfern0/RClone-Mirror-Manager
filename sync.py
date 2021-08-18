@@ -3,8 +3,9 @@ import logging
 
 cfg_path = "./rclone.conf"
 from_drives = [
-    # "test",
-    # "__meow",
+    "test",
+    "___backups",
+    "__meow",
     "__quack",
     "dumpyard",
     "pss",
