@@ -5,6 +5,7 @@ cfg_path = "./rclone.conf"
 from_drives = [
     "test",
     "___backups",
+    "__code",
     "__meow",
     "__quack",
     "dumpyard",
