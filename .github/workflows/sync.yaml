@@ -9,7 +9,6 @@ jobs:
     steps:
       - name: Install RClone
         run: |
-#          curl https://rclone.org/install.sh | sudo bash
           wget https://github.com/dogbutcat/gclone/releases/download/v1.57.0-mod1.4.0/gclone-v1.57.0-mod1.4.0-linux-amd64.zip
           unzip gclone-v1.57.0-mod1.4.0-linux-amd64.zip
           chmod +x gclone-v1.57.0-mod1.4.0-linux-amd64/gclone
