@@ -32,8 +32,8 @@ flags = ["--drive-server-side-across-configs"]
 if os.path.isdir("accounts"):
     sa_files = glob.glob("accounts/*.json")
     assert len(sa_files)
-    flags.append(["--drive-service-account-file-path"])
-    flags.append(["accounts"])
+    flags.append("--drive-service-account-file-path")
+    flags.append("accounts")
 
 to_drive = to_drives[0]
 for from_drive in from_drives:
