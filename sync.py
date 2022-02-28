@@ -1,5 +1,8 @@
-import rclone
+import glob
 import logging
+import os
+
+import rclone
 
 cfg_path = "./rclone.conf"
 from_drives = [
@@ -25,6 +28,13 @@ rc = rclone.with_config(cfg)
 
 logging.basicConfig(level=logging.DEBUG, format="%(asctime)s %(name)s [%(levelname)s]: %(message)s")
 
+flags = ["--drive-server-side-across-configs"]
+if os.path.isdir("accounts"):
+    sa_files = glob.glob("accounts/*.json")
+    assert len(sa_files)
+    flags.append("--drive-service-account-file-path")
+    flags.append("accounts")
+
 to_drive = to_drives[0]
 for from_drive in from_drives:
     print(f"From: {from_drive}:")
@@ -32,7 +42,7 @@ for from_drive in from_drives:
     result = rc.sync(
         f"{from_drive}:",
         f"{to_drive}:sync/{from_drive}",
-        ["--drive-server-side-across-configs"],
+        flags,
     )
     if "error" in result["error"].decode("utf-8").lower():
         exit(1)
@@ -44,7 +54,7 @@ for to_drive in to_drives[1:]:
     result = rc.sync(
         f"{from_drive}:sync/",
         f"{to_drive}:sync/",
-        ["--drive-server-side-across-configs"],
+        flags,
     )
     if "error" in result["error"].decode("utf-8").lower():
         exit(1)
