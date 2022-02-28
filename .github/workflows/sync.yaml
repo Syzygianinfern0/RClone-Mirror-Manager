@@ -23,7 +23,7 @@ jobs:
         env:
           SA_ZIP: ${{ secrets.SA_ZIP }}
         if: "${{ env.SA_ZIP != '' }}"
-        run:
+        run: |
           wget ${{ secrets.SA_ZIP }} -O accounts.zip
           unzip accounts.zip
       - name: List files in the repository
