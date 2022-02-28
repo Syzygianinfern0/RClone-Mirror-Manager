@@ -22,10 +22,10 @@ jobs:
       - name: Downloading SA Accounts Zip (optional)
         env:
           SA_ZIP: ${{ secrets.SA_ZIP }}
-          if: "${{ env.SA_ZIP != '' }}"
-          run:
-            wget ${{ secrets.SA_ZIP }} -O accounts.zip
-            unzip accounts.zip
+        if: "${{ env.SA_ZIP != '' }}"
+        run:
+          wget ${{ secrets.SA_ZIP }} -O accounts.zip
+          unzip accounts.zip
       - name: List files in the repository
         run: |
           ls ${{ github.workspace }}
