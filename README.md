@@ -5,23 +5,38 @@
 </div>
 
 # Description
-Put simply, it regularly triggers GitHub Actions to execute a script that pair-wise iterates and runs `rclone sync` over defined drives. 
+
+Put simply, it regularly triggers GitHub Actions to execute a script that pair-wise iterates and runs `rclone sync` over
+defined drives.
 
 # Dependencies 🧰
-- rclone
+
+- ~~rclone~~ [gclone](https://github.com/dogbutcat/gclone) 🎉
 - python3
 - brain
 
 # Usage 👨‍💻
+
 1. Create an `rclone.conf` file that complies with [RClone](https://rclone.org/).
-2. Host it on some online paste bin. I personally use Secret Gists (yep, I’m obsessed with version control, how’d you guess?).
+2. Host it on some online paste bin. I personally use Secret Gists (yep, I’m obsessed with version control, how’d you
+   guess?).
 3. Fork/mirror this repo.
-4. Create a GitHub Secret called `CONF_URL` and set it's value as the link to the rclone config (make sure you copy the link to the "RAW Text").
+4. Create a GitHub Secret called `CONF_URL` and set it's value as the link to the rclone config (make sure you copy the
+   link to the "RAW Text").
 5. Edit the `from_drives` and `to_drives` in [`sync.py`](sync.py) as you wish.
-6. The script is set to run every day at 6:30 AM UTC. Feel free to modify that under [`.github/workflows/sync.yaml`](.github/workflows/sync.yaml).
+6. The script is set to run every day at 6:30 AM UTC. Feel free to modify that
+   under [`.github/workflows/sync.yaml`](.github/workflows/sync.yaml).
 7. Profit 💯
+
+## Using Service Accounts (optional)
+
+1. Generate the SA jsons and put them in a folder called `accounts` in your PC.
+2. Zip **the folder** and name it as `accounts.zip`.
+3. Upload it somewhere such that you can have a static direct download link (opening this link locally should directly
+   start downloading the zip).
+4. Create a GitHub Secret called `SA_ZIP` and set it's value as the link to the SA zip.
 
 ---
 
-Note: The [`sync.sh`](sync.sh) file is a bash equivalent of the [`sync.py`](sync.py). If you want to tinker with this project
-but you don't like/know Python3, feel free to start there. 
+Note: The [`sync.sh`](sync.sh) file is a bash equivalent of the [`sync.py`](sync.py). If you want to tinker with this
+project but you don't like/know Python3, feel free to start there. 
