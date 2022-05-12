@@ -28,10 +28,10 @@ if os.path.isdir("accounts"):
 to_drive = to_drives[0]
 for from_drive in from_drives:
     print(f"From: {from_drive}:")
-    print(f"To: {to_drive}:sync/{from_drive}")
+    print(f"To: {to_drive}:")
     result = rc.sync(
         f"{from_drive}:",
-        f"{to_drive}:sync/{from_drive}",
+        f"{to_drive}:",
         flags,
     )
     if "error" in result["error"].decode("utf-8").lower():
@@ -39,11 +39,11 @@ for from_drive in from_drives:
 
 from_drive = to_drives[0]
 for to_drive in to_drives[1:]:
-    print(f"From: {from_drive}:sync/")
-    print(f"To: {to_drive}:sync/")
+    print(f"From: {from_drive}:")
+    print(f"To: {to_drive}:")
     result = rc.sync(
-        f"{from_drive}:sync/",
-        f"{to_drive}:sync/",
+        f"{from_drive}:",
+        f"{to_drive}:",
         flags,
     )
     if "error" in result["error"].decode("utf-8").lower():
