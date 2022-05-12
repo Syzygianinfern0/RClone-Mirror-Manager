@@ -9,8 +9,8 @@ from_drives = [
     "gdrive",
 ]
 to_drives = [
-    "0AAiBl06dgw_wUk9PVA",
-    "0AFsVjvQmPdKBUk9PVA",
+    "backup2",
+    "backup3",
 ]
 
 cfg = open(cfg_path).read()
