@@ -6,7 +6,7 @@ import rclone
 
 cfg_path = "./rclone.conf"
 from_drives = [
-    "0AESc-pLUjoheUk9PVA",
+    "gdrive",
 ]
 to_drives = [
     "0AAiBl06dgw_wUk9PVA",
