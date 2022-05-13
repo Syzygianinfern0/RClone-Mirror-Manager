@@ -9,8 +9,8 @@ from_drives = [
     "gdrive",
 ]
 to_drives = [
-    "backup2",
-    "backup3",
+    "0AAiBl06dgw_wUk9PVA",
+    "0AFsVjvQmPdKBUk9PVA",
 ]
 
 cfg = open(cfg_path).read()
@@ -28,10 +28,10 @@ if os.path.isdir("accounts"):
 to_drive = to_drives[0]
 for from_drive in from_drives:
     print(f"From: {from_drive}:")
-    print(f"To: {to_drive}:")
+    print(f"To: {from_drive}:{to_drive}")
     result = rc.sync(
         f"{from_drive}:",
-        f"{to_drive}:",
+        f"{from_drive}:{to_drive}",
         flags,
     )
     if "error" in result["error"].decode("utf-8").lower():
@@ -40,10 +40,10 @@ for from_drive in from_drives:
 from_drive = to_drives[0]
 for to_drive in to_drives[1:]:
     print(f"From: {from_drive}:")
-    print(f"To: {to_drive}:")
+    print(f"To: {from_drive}:{to_drive}")
     result = rc.sync(
         f"{from_drive}:",
-        f"{to_drive}:",
+        f"{from_drive}:{to_drive}",
         flags,
     )
     if "error" in result["error"].decode("utf-8").lower():
