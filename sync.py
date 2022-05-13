@@ -6,11 +6,10 @@ import rclone
 
 cfg_path = "./rclone.conf"
 from_drives = [
-    "f77drive",
+    "gdrive",
    
 ]
 to_drives = [
-     "gdrive",
     "backup2",
     "backup3",
 ]
