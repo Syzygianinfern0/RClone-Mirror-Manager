@@ -6,12 +6,13 @@ import rclone
 
 cfg_path = "./rclone.conf"
 from_drives = [
-    "gdrive",
+    "f77drive",
+   
 ]
 to_drives = [
+     "gdrive",
     "backup2",
     "backup3",
-    "f77drive",
 ]
 
 cfg = open(cfg_path).read()
@@ -28,8 +29,8 @@ if os.path.isdir("accounts"):
 
 to_drive = to_drives[0]
 for from_drive in from_drives:
-    print(f"From: {from_drive}:")
-    print(f"To: {to_drive}:")
+    print(f"A-From: {from_drive}:")
+    print(f"A-To: {to_drive}:")
     result = rc.sync(
         f"{from_drive}:",
         f"{to_drive}:",
@@ -40,8 +41,8 @@ for from_drive in from_drives:
 
 from_drive = to_drives[0]
 for to_drive in to_drives[1:]:
-    print(f"From: {from_drive}:")
-    print(f"To: {to_drive}:")
+    print(f"B-From: {from_drive}:")
+    print(f"B-To: {to_drive}:")
     result = rc.sync(
         f"{from_drive}:",
         f"{to_drive}:",
