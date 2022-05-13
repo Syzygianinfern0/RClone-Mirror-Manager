@@ -21,6 +21,10 @@ rc = rclone.with_config(cfg)
 logging.basicConfig(level=logging.DEBUG, format="%(asctime)s %(name)s [%(levelname)s]: %(message)s")
 
 flags = ["--drive-server-side-across-configs"]
+
+flags.append("--fast-list")
+flags.append("--drive-chunk-size 64M")
+             
 if os.path.isdir("accounts"):
     sa_files = glob.glob("accounts/*.json")
     assert len(sa_files)
