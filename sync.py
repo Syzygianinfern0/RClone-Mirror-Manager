@@ -23,7 +23,8 @@ logging.basicConfig(level=logging.DEBUG, format="%(asctime)s %(name)s [%(levelna
 flags = ["--drive-server-side-across-configs"]
 
 flags.append("--fast-list")
-flags.append("--drive-chunk-size 64M")
+flags.append("--drive-chunk-size")
+flags.append("64M")
              
 if os.path.isdir("accounts"):
     sa_files = glob.glob("accounts/*.json")
