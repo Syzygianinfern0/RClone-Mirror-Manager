@@ -11,6 +11,7 @@ from_drives = [
 to_drives = [
     "backup2",
     "backup3",
+    "f77drive",
 ]
 
 cfg = open(cfg_path).read()
