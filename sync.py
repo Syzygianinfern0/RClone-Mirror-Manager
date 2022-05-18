@@ -7,9 +7,12 @@ import rclone
 cfg_path = "./rclone.conf"
 from_drives = [
     "gdrive",
+    "backup2",
+    "backup3",
    
 ]
 to_drives = [
+    "gdrive",
     "backup2",
     "backup3",
 ]
@@ -33,6 +36,8 @@ if os.path.isdir("accounts"):
 
 to_drive = to_drives[0]
 for from_drive in from_drives:
+    if from_drive == to_drive:
+        continue
     print(f"A-From: {from_drive}:")
     print(f"A-To: {to_drive}:")
     result = rc.copy(
@@ -45,6 +50,8 @@ for from_drive in from_drives:
 
 from_drive = to_drives[0]
 for to_drive in to_drives[1:]:
+    if to_drive == from_drive:
+        continue
     print(f"B-From: {from_drive}:")
     print(f"B-To: {to_drive}:")
     result = rc.copy(
