@@ -4,6 +4,8 @@ import os
 
 import rclone
 
+import itertools
+
 cfg_path = "./rclone.conf"
 from_drives = [
     "gdrive",
