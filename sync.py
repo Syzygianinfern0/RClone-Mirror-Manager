@@ -35,7 +35,7 @@ to_drive = to_drives[0]
 for from_drive in from_drives:
     print(f"A-From: {from_drive}:")
     print(f"A-To: {to_drive}:")
-    result = rc.sync(
+    result = rc.copy(
         f"{from_drive}:",
         f"{to_drive}:",
         flags,
@@ -47,7 +47,7 @@ from_drive = to_drives[0]
 for to_drive in to_drives[1:]:
     print(f"B-From: {from_drive}:")
     print(f"B-To: {to_drive}:")
-    result = rc.sync(
+    result = rc.copy(
         f"{from_drive}:",
         f"{to_drive}:",
         flags,
