@@ -43,7 +43,7 @@ for a_drive,b_drive in itertools.product(from_drives,to_drives):
         continue
     print(f"From Drive: {a_drive}:")
     print(f"To Drive: {b_drive}:")
-    result = rc.copy(
+    result = rc.sync(
         f"{a_drive}:",
         f"{b_drive}:",
         flags,
