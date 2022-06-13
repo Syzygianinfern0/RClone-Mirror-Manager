@@ -11,14 +11,12 @@ from_drives = [
     "gdrive",
     "backup2",
     "backup3",
-    "backup4",
    
 ]
 to_drives = [
     "gdrive",
     "backup2",
     "backup3",
-    "backup4",
 ]
 
 cfg = open(cfg_path).read()
