@@ -8,13 +8,11 @@ import itertools
 
 cfg_path = "./rclone.conf"
 from_drives = [
-    "gdrive",
     "backup2",
     "backup3",
    
 ]
 to_drives = [
-    "gdrive",
     "backup2",
     "backup3",
 ]
